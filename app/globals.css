@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — CV Sari Natura Herba
+ * Diekstrak langsung dari mockup: latar krem, panel beige/taupe, section
+ * cokelat gelap, aksen emas. Tipografi sans-serif grotesque sesuai mockup.
+ */
+@theme {
+  /* Warna merek */
+  --color-linen: #fbf7ec; /* krem utama (bg mockup) */
+  --color-linen-soft: #fdfbf4; /* hampir putih — header, kartu */
+  --color-beige: #ede5d3; /* panel beige (social impact, hero kontak) */
+  --color-taupe: #ded4c4; /* panel taupe (product highlights) */
+  --color-espresso: #3a2e22; /* cokelat gelap — section/form gelap */
+  --color-espresso-deep: #2e241b;
+  --color-footer: #2b2a28; /* strip footer arang */
+  --color-tan: #c99b6d; /* aksen emas dekoratif (garis, angka besar) */
+  --color-tan-soft: #d9b98c;
+  /* Emas gelap — teks kecil & label (AA ≥4.5:1 di krem, beige, maupun taupe) */
+  --color-tan-ink: #6e4f1e;
+  /* Perunggu emas — tombol pill solid dengan teks putih (≥4.5:1) */
+  --color-gold-deep: #8f6e3a;
+  --color-brown-btn: #7e5128; /* tombol cokelat (halaman produk) */
+  /* Cincin fokus — ≥3:1 di latar terang & gelap */
+  --color-focus: #9c7740;
+  --color-ink: #2e2620;
+  --color-muted: #6e6157;
+  --color-muted-light: #a89a8d;
+  --color-line: #e6dfce;
+  --color-line-dark: #5c4b3a;
+
+  /* Tipografi — sans-serif grotesque (Inter) sesuai mockup */
+  --font-display: var(--font-inter), ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.1em;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.6;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.7;
+
+  --text-subtitle: 1.125rem;
+  --text-subtitle--line-height: 1.55;
+
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.35;
+
+  --text-h2: clamp(1.75rem, 3vw, 2.75rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.015em;
+
+  --text-h1: clamp(2rem, 4vw, 3.25rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-display: clamp(2.5rem, 5.2vw, 4.25rem);
+  --text-display--line-height: 1.03;
+  --text-display--letter-spacing: -0.025em;
+
+  --text-mega: clamp(2.75rem, 6vw, 4.75rem);
+  --text-mega--line-height: 1.02;
+  --text-mega--letter-spacing: -0.03em;
+
+  /* Radius konsisten */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+
+  /* Gerak — restraint */
+  --ease-out-soft: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Animasi masuk — satu family dipakai di hero, overlay, dan reveal */
+  --animate-fade-up: fade-up 0.5s var(--ease-out-soft) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Dasar */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-linen);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: var(--color-tan);
+    color: var(--color-espresso-deep);
+  }
+}
+
+/* Utilitas khusus */
+/* Label eyebrow emas + garis pendek di depan (persis mockup) */
+@utility eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tan-ink);
+}
+
+@utility eyebrow-dash {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  &::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5px;
+    background: currentColor;
+  }
+}
+
+/* Varian eyebrow untuk latar gelap (emas terang) */
+@utility eyebrow-gold {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tan);
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Garis rambut emas — pemisah baris info kontak */
+@utility rule-gold {
+  border: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-tan) 55%, transparent);
+}
+
+/* Tombol pill solid — emas perunggu + teks putih (AA) */
+@utility btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.9rem;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--color-gold-deep);
+  color: #fff;
+  transition:
+    background-color 150ms var(--ease-out-soft),
+    transform 150ms var(--ease-out-soft);
+
+  &:hover {
+    background-color: #7c5e30;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Tombol pill cokelat (halaman produk) */
+@utility btn-brown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.9rem;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--color-brown-btn);
+  color: #fff;
+  transition:
+    background-color 150ms var(--ease-out-soft),
+    transform 150ms var(--ease-out-soft);
+
+  &:hover {
+    background-color: #6a4422;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Tautan bergaris bawah (mockup: "EXPLORE PRODUCTS", "LIHAT HALAMAN PRODUK") */
+@utility link-underline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.4em;
+  transition: color 150ms var(--ease-out-soft);
+
+  &:hover {
+    color: var(--color-tan-ink);
+  }
+}
+
+/* Angka tabular untuk statistik (hindari layout shift) */
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Reveal saat scroll — halus: fade + 10px naik, sekali jalan.
+ * `motion-ready` dipasang oleh JS saat mount (dan dilepas kalau user
+ * memilih reduced-motion) supaya konten tetap terlihat tanpa JavaScript.
+ */
+html.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s var(--ease-out-soft),
+    transform 0.5s var(--ease-out-soft);
+}
+
+html.motion-ready [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
