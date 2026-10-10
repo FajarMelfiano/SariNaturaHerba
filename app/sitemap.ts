@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { produk } from "@/content/site";
 
-const BASE = "https://sarinaturaherba.example.com";
+const BASE = "https://sari-natura-herba.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sarinaturaherba.example.com"),
+  metadataBase: new URL("https://sari-natura-herba.vercel.app"),
   title: {
     default: `${site.nama} — Your Best Partner for Herbal Needs`,
     template: `%s — ${site.nama}`,

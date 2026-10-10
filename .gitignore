@@ -8,3 +8,5 @@ next-env.d.ts
 
 # Vercel (tautan proyek lokal — bukan bagian repo)
 .vercel/
+.vercel
+.env*

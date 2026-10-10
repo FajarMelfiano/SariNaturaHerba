@@ -35,12 +35,22 @@ scripts/validate.py   # validasi struktur — jalankan ulang kapan saja
 MOCKUP/               # 21 gambar mockup customer — sumber kebenaran visual
 ```
 
+## Deployment
+
+- **GitHub**: <https://github.com/FajarMelfiano/SariNaturaHerba> — branch `main`,
+  `.gitignore` menyingkirkan `node_modules/`, `.next/`, `.vercel/`, `.env.local`.
+- **Vercel**: <https://sari-natura-herba.vercel.app> — proyek `sari-natura-herba`
+  (CLI: `vercel link` sekali, lalu `vercel deploy --prod`).
+- Setelah pindah ke domain customer: ganti `BASE`/`metadataBase`, lalu
+  `vercel git connect` agar push ke GitHub ikut ter-deploy otomatis.
+
 ## Catatan produksi
 
 - **Form quotation** tervalidasi di client (siap disambungkan ke server action /
   email endpoint — cari `QuoteForm.tsx`; simulasi sukses saat ini).
-- Ganti `metadataBase` di `app/layout.tsx` dan URL di `sitemap.ts`/`robots.ts`
-  dengan domain asli sebelum deploy.
+- Domain produksi: `https://sari-natura-herba.vercel.app` (sudah disetel di
+  `metadataBase`, `sitemap.ts`, `robots.ts`). Saat pindah ke domain milik
+  customer, ganti ketiga tempat itu + `BASE` lalu redeploy.
 - Font self-host via `next/font` (Inter — padanan gratis terdekat tipografi
   sans-serif grotesque pada mockup) → zero CLS.
 - Teks mengikuti mockup **verbatim**, termasuk ejaan asli customer
