@@ -46,7 +46,8 @@ WAJIB = [
 
 # Existing logo variants plus the customer-provided no-tagline header logo.
 LOGO_WAJIB = ["icon.png", "horizontal.png", "stacked.png", "wordmark.png",
-              "wordmark-light.png", "horizontal-customer.jpg"]
+              "wordmark-light.png", "horizontal-customer.jpg",
+              "horizontal-customer.png"]
 
 IMG_WAJIB = [
     "hero.jpg", "jahe-gajah.jpg", "jahe-kering.jpg", "petani.jpg", "panen.jpg",

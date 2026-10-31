@@ -84,7 +84,7 @@ export function Header() {
         <div className="container-site flex h-16 items-center justify-between sm:h-20">
           <Link href="/" aria-label={`${site.nama} — home`} className="shrink-0">
             <Image
-              src="/logo/horizontal-customer.jpg"
+              src="/logo/horizontal-customer.png"
               alt={site.nama}
               width={1368}
               height={304}
@@ -113,7 +113,7 @@ export function Header() {
       >
         <div className="container-site flex h-20 shrink-0 items-center justify-between">
           <Image
-            src="/logo/horizontal-customer.jpg"
+            src="/logo/horizontal-customer.png"
             alt=""
             aria-hidden="true"
             width={1368}
