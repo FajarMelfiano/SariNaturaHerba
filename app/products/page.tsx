@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ProductCard } from "@/components/ui";
-import { ctaId, produk, produkLanding } from "@/content/site";
+import { ctaProducts, produk, produkLanding } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Jahe gajah (elephant ginger) dan jahe kering slice dari Indonesia — produk herbal premium untuk pasar global.",
+    "Fresh elephant ginger and dried ginger slices from Indonesia, prepared for international markets.",
 };
 
 export default function ProductsPage() {
@@ -41,16 +41,16 @@ export default function ProductsPage() {
           {/* Dua foto berjenjang — jahe segar (kiri) & irisan kering (kanan) */}
           <div data-reveal style={{ transitionDelay: "100ms" }} className="grid grid-cols-2 gap-4 md:gap-5">
             <Image
-              src="/img/jahe-gajah.jpg"
-              alt="Rimpang jahe gajah segar"
+              src="/img/ginger-fresh-customer.jpg"
+              alt="Fresh Indonesian elephant ginger"
               width={640}
               height={800}
               priority
               className="aspect-[3/4] w-full rounded-xl object-cover outline outline-1 outline-black/10"
             />
             <Image
-              src="/img/jahe-kering.jpg"
-              alt="Irisan jahe kering"
+              src="/img/ginger-slices-customer.jpg"
+              alt="Dried Indonesian ginger slices"
               width={640}
               height={640}
               priority
@@ -73,16 +73,16 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA Bahasa Indonesia — MOCKUP: section gelap, judul besar, pill emas */}
+      {/* Closing product CTA */}
       <section aria-labelledby="cta-id-judul" className="bg-espresso-deep py-24 text-center md:py-32">
         <div data-reveal className="container-site flex flex-col items-center">
-          <p className="eyebrow-gold eyebrow-dash">{ctaId.eyebrow}</p>
+          <p className="eyebrow-gold eyebrow-dash">{ctaProducts.eyebrow}</p>
           <h2 id="cta-id-judul" className="mt-6 max-w-3xl text-h1 font-bold text-linen">
-            {ctaId.judul}
+            {ctaProducts.judul}
           </h2>
-          <p className="mt-5 max-w-2xl text-body text-linen/80">{ctaId.teks}</p>
+          <p className="mt-5 max-w-2xl text-body text-linen/80">{ctaProducts.teks}</p>
           <Link href="/contact" className="btn-pill mt-9">
-            {ctaId.cta}
+            {ctaProducts.cta}
           </Link>
         </div>
       </section>

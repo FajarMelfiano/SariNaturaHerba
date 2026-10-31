@@ -1,74 +1,52 @@
-# CV Sari Natura Herba — Website Resmi
+# CV Sari Natura Herba — Website
 
-Website company profile & katalog ekspor CV Sari Natura Herba (jahe dan produk herbal
-Indonesia), dibangun dengan **Next.js 15 (App Router) + TypeScript + Tailwind CSS v4**.
+Company profile and export catalog for CV Sari Natura Herba, built with **Next.js 15 (App Router), TypeScript, and Tailwind CSS v4**.
 
-## Menjalankan
+## Run locally
 
 ```bash
 npm install
-npm run dev        # development → http://localhost:3000
+npm run dev        # http://localhost:3000
 npm run build      # production build
-npm start          # jalankan hasil build
+npm start          # run the production build
 ```
 
-## Verifikasi
+## Verification
 
 ```bash
-npm run verify     # typecheck + lint + build + python3 scripts/validate.py
+npm run verify     # typecheck + lint + build + asset validation
 ```
 
-## Struktur
+## Project structure
 
+```text
+app/                  # Home, About, Products, and Contact routes
+components/           # Header, AboutSections, SlideRail, QuoteForm, CompanyProfile, and UI
+content/site.ts       # shared English copy and the two products with supplied details
+public/logo/          # brand marks; customer-provided header logo has no tagline
+public/img/           # customer-provided menu, ginger, and farm images plus retained stock assets
+scripts/validate.py   # checks required files and referenced images
+MOCKUP/               # customer mockups used as design references
 ```
-app/                  # halaman (App Router)
-  page.tsx            # Home — 5 bagian bernomor + vision/social/CTA penutup
-  about/              # tab About — "Supplying Indonesia's Natural Resources"
-  products/           # katalog + [slug] detail produk
-  contact/            # hero kontak + International Quotation Request
-components/           # Header (MENU pill + overlay), SlideRail, QuoteForm, CompanyProfile, Reveal, ui
-content/site.ts       # single source of truth: teks persis mockup, produk, kontak
-public/logo/          # 4 varian logo hasil ekstrak dari MOCKUP/ (+ varian terang)
-public/img/           # foto produk/petani (lihat Atribusi)
-scripts/extract_logos.py  # ekstrak ulang PNG logo dari MOCKUP/*.jpeg
-scripts/validate.py   # validasi struktur — jalankan ulang kapan saja
-MOCKUP/               # 21 gambar mockup customer — sumber kebenaran visual
-```
+
+Home has eight numbered sections. About reuses the company profile, vision and mission, core values, social impact, and partnership call-to-action. The catalog lists only the two ginger products for which this repository already contains details; no third product or specifications have been added.
 
 ## Deployment
 
-- **GitHub**: <https://github.com/FajarMelfiano/SariNaturaHerba> — branch `main`,
-  `.gitignore` menyingkirkan `node_modules/`, `.next/`, `.vercel/`, `.env.local`.
-- **Vercel**: <https://sari-natura-herba.vercel.app> — proyek `sari-natura-herba`
-  (CLI: `vercel link` sekali, lalu `vercel deploy --prod`).
-- Setelah pindah ke domain customer: ganti `BASE`/`metadataBase`, lalu
-  `vercel git connect` agar push ke GitHub ikut ter-deploy otomatis.
+- **GitHub:** <https://github.com/FajarMelfiano/SariNaturaHerba>, branch `main`.
+- **Current Vercel host:** <https://sari-natura-herba-three.vercel.app/>. The repository's `main` branch is linked to this deployment; pushing to `main` is expected to trigger a Vercel deployment.
+- A customer-owned `.com` domain has not been selected. The site therefore stays on the current Vercel host. When a domain is selected and configured, update `metadataBase` in `app/layout.tsx` and the `BASE` / sitemap host in `app/sitemap.ts` and `app/robots.ts`, then redeploy.
 
-## Catatan produksi
+## Production notes
 
-- **Form quotation** tervalidasi di client (siap disambungkan ke server action /
-  email endpoint — cari `QuoteForm.tsx`; simulasi sukses saat ini).
-- Domain produksi: `https://sari-natura-herba.vercel.app` (sudah disetel di
-  `metadataBase`, `sitemap.ts`, `robots.ts`). Saat pindah ke domain milik
-  customer, ganti ketiga tempat itu + `BASE` lalu redeploy.
-- Font self-host via `next/font` (Inter — padanan gratis terdekat tipografi
-  sans-serif grotesque pada mockup) → zero CLS.
-- Teks mengikuti mockup **verbatim**, termasuk ejaan asli customer
-  ("OUR MISION", "SUBMIT INQIURY"). Koreksi ejaan ada di tangan customer.
-- Tanpa footer halaman (mockup tidak memilikinya) — halaman berakhir di
-  section terakhirnya.
-- **Tab About** = halaman `/about` (layar "Supplying Indonesia's Natural
-  Resources"), bukan bagian home; home kini 5 bagian (rail & pagination
-  `01 — 05`). Section Company Profile dipakai bersama oleh home dan About
-  lewat `components/CompanyProfile.tsx` (satu sumber kode).
-- Animasi dibatasi halus & profesional: reveal fade-up sekali jalan saat
-  scroll (`data-reveal` + `Reveal.tsx`), stagger saat overlay menu dibuka,
-  dan hover-lift kartu. Semua dimatikan otomatis bila pengguna memilih
-  `prefers-reduced-motion`.
+- The quotation form performs local validation only. It displays a preview notice and does **not** send or store inquiries; an email/service endpoint has not been provided.
+- Display headings use Cormorant Garamond and body copy uses Inter through `next/font`.
+- User-provided assets are stored under `public/logo/` and `public/img/`. The original stock photo files are retained, but `hero.jpg` remains in active use and is licensed CC BY-SA 4.0; keep its attribution and share-alike requirements in mind for commercial production.
+- The site uses no global footer, matching the supplied page design. Animations respect `prefers-reduced-motion`.
 
-## Atribusi foto (free stock)
+## Retained stock-photo attribution
 
-| File | Sumber | Lisensi |
+| File | Source | License |
 |---|---|---|
 | `public/img/hero.jpg` | [Fresh ginger rhizome 01](https://commons.wikimedia.org/wiki/File:Fresh_ginger_rhizome_01.jpg) — Wikimedia Commons | CC BY-SA 4.0 |
 | `public/img/jahe-gajah.jpg` | [Fresh ginger rhizome 02](https://commons.wikimedia.org/wiki/File:Fresh_ginger_rhizome_02.jpg) — Wikimedia Commons | CC BY-SA 4.0 |
@@ -76,5 +54,4 @@ MOCKUP/               # 21 gambar mockup customer — sumber kebenaran visual
 | `public/img/petani.jpg` | [Farmers with freshly harvested turmeric fingers](https://commons.wikimedia.org/wiki/File:Farmers_with_freshly_harvested_turmeric_fingers_in_a_Ridhura_village_field.jpg) — Wikimedia Commons | CC0 |
 | `public/img/panen.jpg` | [Ginger garden](https://commons.wikimedia.org/wiki/File:Ginger_garden.jpg) — Wikimedia Commons | CC BY-SA 3.0 |
 
-CC BY-SA mensyaratkan atribusi + lisensi serupa; untuk penggunaan komersial
-production, ganti dengan foto customer sendiri atau stok berlisensi bebas (mis. Pexels/Unsplash).
+The replacement product and farm photos and the header/menu assets were provided by the owner for this site.

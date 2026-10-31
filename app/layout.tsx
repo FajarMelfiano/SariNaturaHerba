@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import { site } from "@/content/site";
 import { Header } from "@/components/Header";
 import { RevealInit } from "@/components/Reveal";
@@ -11,24 +12,29 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sari-natura-herba.vercel.app"),
+  metadataBase: new URL("https://sari-natura-herba-three.vercel.app"),
   title: {
     default: `${site.nama} — Your Best Partner for Herbal Needs`,
     template: `%s — ${site.nama}`,
   },
   description: site.deskripsi,
   keywords: [
-    "jahe gajah",
+    "fresh elephant ginger",
     "elephant ginger exporter",
     "dried ginger slices",
     "Indonesian herbal exporter",
-    "jahe kering slice",
   ],
   openGraph: {
     type: "website",
-    locale: "id_ID",
+    locale: "en_US",
     siteName: site.nama,
     title: `${site.nama} — Your Best Partner for Herbal Needs`,
     description: site.deskripsi,
@@ -49,7 +55,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`} data-scroll-behavior="smooth">
       <body>
         <a
           href="#konten-utama"

@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* 01 · Hero — panel kiri krem + foto kanan (split sesuai mockup) */}
       <section id="home" aria-labelledby="home-judul" className="border-b border-line">
         <div className="grid md:min-h-[calc(100svh-5rem)] md:grid-cols-[minmax(360px,42%)_1fr]">
-          <div className="flex flex-col justify-center bg-linen px-7 py-16 md:px-12 md:py-20">
+          <div className="hero-gradient flex flex-col justify-center px-7 py-16 md:px-12 md:py-20">
             <p data-reveal className="eyebrow eyebrow-dash">
               {hero.eyebrow}
             </p>
@@ -80,14 +80,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[300px] md:min-h-0">
+          <div className="relative min-h-[300px] overflow-hidden md:min-h-0">
             <Image
               src="/img/hero.jpg"
-              alt="Rimpang jahe segar dan irisan jahe kering di atas permukaan kayu"
+              alt="Fresh ginger rhizomes and dried ginger slices"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 58vw"
               className="object-cover"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-r from-[#e9dcc5]/65 via-[#e9dcc5]/15 to-transparent"
             />
           </div>
         </div>
@@ -170,7 +174,7 @@ export default function HomePage() {
       <CompanyProfile />
 
       {/* 06 · Vision & Mission — section gelap */}
-      <section aria-labelledby="vision-judul" className="bg-espresso py-20 text-linen md:py-28">
+      <section id="vision-mission" aria-labelledby="vision-judul" className="bg-espresso py-20 text-linen md:py-28">
         <div className="container-site grid gap-12 md:grid-cols-2 md:gap-16">
           <div data-reveal>
             <p className="eyebrow-gold eyebrow-dash">{visionMission.visiEyebrow}</p>
@@ -201,6 +205,7 @@ export default function HomePage() {
 
       {/* 07 · Social Impact & Sustainability — latar beige + foto overlay */}
       <section
+        id="social-impact"
         aria-labelledby="social-judul"
         className="bg-beige py-20 md:py-28"
       >
@@ -223,8 +228,8 @@ export default function HomePage() {
             className="relative overflow-hidden rounded-xl outline outline-1 outline-black/10"
           >
             <Image
-              src="/img/panen.jpg"
-              alt="Kebun jahe milik petani mitra di Indonesia"
+              src="/img/farm-impact-customer.jpg"
+              alt="A farmer harvesting ginger in an Indonesian field"
               width={960}
               height={720}
               loading="lazy"
@@ -242,7 +247,7 @@ export default function HomePage() {
       </section>
 
       {/* 08 · CTA gelap — penutup home */}
-      <section aria-labelledby="cta-judul" className="bg-espresso-deep py-24 text-center md:py-32">
+      <section id="closing-cta" aria-labelledby="cta-judul" className="bg-espresso-deep py-24 text-center md:py-32">
         <div data-reveal className="container-site flex flex-col items-center">
           <p className="eyebrow-gold eyebrow-dash">{ctaGelap.eyebrow}</p>
           <h2 id="cta-judul" className="mt-6 max-w-3xl text-h1 font-bold text-linen">

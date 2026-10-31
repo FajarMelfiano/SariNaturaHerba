@@ -40,7 +40,7 @@ export default async function ProdukDetailPage({ params }: Props) {
 
   const Konten = (
     <div data-reveal style={{ transitionDelay: "80ms" }}>
-      <p className="eyebrow">01 —— Produk Herbal</p>
+      <p className="eyebrow">INDONESIAN GINGER PRODUCTS</p>
       <h1 className="mt-5 text-mega font-bold text-ink">{p.h1}</h1>
       <p className="mt-2 text-[1.1875rem] font-semibold text-tan-ink">{p.subjudul}</p>
 
@@ -50,7 +50,7 @@ export default async function ProdukDetailPage({ params }: Props) {
 
       <section className="mt-12" aria-labelledby="deskripsi-judul">
         <h2 id="deskripsi-judul" className="text-h2 font-bold text-ink">
-          Deskripsi Produk
+          Product Description
         </h2>
         <div className="mt-5 space-y-5 text-body text-muted">
           {p.deskripsi.map((t) => (
@@ -60,9 +60,9 @@ export default async function ProdukDetailPage({ params }: Props) {
       </section>
 
       <section className="mt-12" aria-labelledby="spesifikasi-judul">
-        <p className="eyebrow eyebrow-dash">Informasi Teknis</p>
+        <p className="eyebrow eyebrow-dash">TECHNICAL INFORMATION</p>
         <h2 id="spesifikasi-judul" className="mt-4 text-h2 font-bold text-ink">
-          Spesifikasi Teknis
+          Technical Specifications
         </h2>
         <hr className="rule-gold mt-5" />
         <dl className="mt-6 space-y-4 text-body text-muted">
@@ -79,10 +79,10 @@ export default async function ProdukDetailPage({ params }: Props) {
 
       <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5">
         <Link href="/contact" className="btn-brown">
-          Minta Penawaran
+          Request a Quote
         </Link>
         <Link href="/products" className="link-underline">
-          Lihat Halaman Produk
+          View All Products
         </Link>
       </div>
     </div>

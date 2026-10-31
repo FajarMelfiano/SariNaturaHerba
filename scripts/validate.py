@@ -34,6 +34,7 @@ WAJIB = [
     "app/products/[slug]/page.tsx",
     "app/contact/page.tsx",
     "components/Header.tsx",
+    "components/AboutSections.tsx",
     "components/CompanyProfile.tsx",
     "components/SlideRail.tsx",
     "components/QuoteForm.tsx",
@@ -43,11 +44,15 @@ WAJIB = [
     "README.md",
 ]
 
-# 4 varian logo (dari mockup) + varian terang untuk latar gelap
+# Existing logo variants plus the customer-provided no-tagline header logo.
 LOGO_WAJIB = ["icon.png", "horizontal.png", "stacked.png", "wordmark.png",
-              "wordmark-light.png"]
+              "wordmark-light.png", "horizontal-customer.jpg"]
 
-IMG_WAJIB = ["hero.jpg", "jahe-gajah.jpg", "jahe-kering.jpg", "petani.jpg", "panen.jpg"]
+IMG_WAJIB = [
+    "hero.jpg", "jahe-gajah.jpg", "jahe-kering.jpg", "petani.jpg", "panen.jpg",
+    "menu-background.jpg", "ginger-fresh-customer.jpg", "ginger-slices-customer.jpg",
+    "farm-about-customer.jpg", "farm-impact-customer.jpg",
+]
 
 gagal: list[str] = []
 catat: list[str] = []

@@ -5,7 +5,7 @@ import { kontak, site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact — International Quotation Request",
   description:
-    "International quotation request untuk jahe dan produk herbal Indonesia. Tim penjualan kami membalas dalam satu hari kerja.",
+    "Request a quotation for Indonesian ginger and herbal products. Our sales team aims to respond within one business day.",
 };
 
 export default function ContactPage() {

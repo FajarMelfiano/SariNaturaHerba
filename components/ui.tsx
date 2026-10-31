@@ -11,7 +11,7 @@ export function ProductCard({ p }: { p: Produk }) {
     <Link
       href={`/products/${p.slug}`}
       className="group relative block overflow-hidden rounded-xl outline outline-1 outline-black/10 transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:-translate-y-1 hover:shadow-[0_18px_44px_-26px_rgba(46,36,27,0.55)]"
-      aria-label={`${p.kartu} — lihat detail produk`}
+      aria-label={`${p.kartu} — view product details`}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image

@@ -3,7 +3,7 @@
 /*
  * Design tokens — CV Sari Natura Herba
  * Diekstrak langsung dari mockup: latar krem, panel beige/taupe, section
- * cokelat gelap, aksen emas. Tipografi sans-serif grotesque sesuai mockup.
+ * cokelat gelap, aksen emas. Headings use editorial serif; body uses Inter.
  */
 @theme {
   /* Warna merek */
@@ -29,8 +29,8 @@
   --color-line: #e6dfce;
   --color-line-dark: #5c4b3a;
 
-  /* Tipografi — sans-serif grotesque (Inter) sesuai mockup */
-  --font-display: var(--font-inter), ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
+  /* Tipografi — serif editorial for headings, Inter for body copy */
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-body: var(--font-inter), ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
 
   --text-caption: 0.75rem;
@@ -187,6 +187,10 @@
   @media (min-width: 768px) {
     padding-inline: 2.5rem;
   }
+}
+
+@utility hero-gradient {
+  background: linear-gradient(122deg, #fbf7ec 0%, #f5eedf 58%, #e9dcc5 100%);
 }
 
 /* Garis rambut emas — pemisah baris info kontak */

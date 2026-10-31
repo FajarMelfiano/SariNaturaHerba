@@ -6,7 +6,7 @@ import { bagianHome } from "@/content/site";
 /**
  * Indikator slide home — MOCKUP:
  *  - rail 6 titik di tepi kanan dengan label pada titik aktif (HOME, WHY US, …)
- *  - pill pagination "01 — 05" di kiri bawah
+ *  - pill pagination "01 — 08" di kiri bawah
  * Keduanya disembunyikan setelah bagian terakhir (layar penutup tanpa indikator).
  */
 export function SlideRail() {
@@ -107,7 +107,7 @@ export function SlideRail() {
         })}
       </nav>
 
-      {/* Pagination pill — kiri bawah (bagian 01–05, mengikuti bagianHome) */}
+      {/* Pagination pill — lower left (01–08, follows bagianHome) */}
       <div className="fixed bottom-7 left-7 z-30">
         <p className="tnum inline-flex items-center gap-3 rounded-full border border-line bg-linen-soft px-6 py-3 text-caption font-bold tracking-[0.12em] text-ink shadow-[0_6px_24px_-12px_rgba(58,46,34,0.4)]">
           <span>{String(aktif + 1).padStart(2, "0")}</span>

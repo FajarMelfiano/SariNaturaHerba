@@ -1,16 +1,15 @@
 /**
- * Data konten situs CV Sari Natura Herba.
- * Teks dipertahankan persis seperti mockup customer (bahasa Inggris/Indonesia
- * campur, termasuk ejaan aslinya) — mockup adalah sumber kebenaran visual.
+ * CV Sari Natura Herba site content.
+ * Keep customer-provided company and product facts unchanged; UI copy is English.
  */
 
 export const site = {
   nama: "CV Sari Natura Herba",
-  namaFooter: "CV SariNatura Herba",
-  taglineFooter: "Indonesian Herbs Exporter",
-  tagline: "KEMURNIAN YANG BERNILAI",
+  namaFooter: "CV Sari Natura Herba",
+  taglineFooter: "Indonesian Ginger & Herbal Products Exporter",
+  tagline: "PURITY WITH VALUE",
   deskripsi:
-    "Eksporir jahe dan produk herbal Indonesia — memasok sumber daya alam Indonesia untuk pasar global.",
+    "Indonesian ginger and herbal product exporter, connecting Indonesia's natural resources with global markets.",
   email: "sari01natura@gmail.com",
   telepon: "+62 815 2921 2210",
   teleponWa: "6281529212210",
@@ -22,7 +21,7 @@ export const site = {
     "Supplying Indonesia's premium agricultural products to the global market.",
 } as const;
 
-/** Menu overlay — 01…04 sesuai mockup. About = halaman khusus (/about). */
+/** Main navigation. */
 export const navigasi = [
   { no: "01", label: "Home", href: "/" },
   { no: "02", label: "About", href: "/about" },
@@ -30,75 +29,76 @@ export const navigasi = [
   { no: "04", label: "Contact", href: "/contact" },
 ] as const;
 
-/** Lima bagian home (01–05) untuk rail titik + pagination pill.
- *  Layar "Supplying Indonesia's Natural Resources" adalah halaman About,
- *  bukan bagian home. */
+/** Eight numbered Home screens shown in the customer's revision document. */
 export const bagianHome = [
   { id: "home", label: "HOME" },
   { id: "why-us", label: "WHY US" },
   { id: "produk-highlight", label: "PRODUCTS" },
   { id: "core-values", label: "VALUES" },
   { id: "company-profile", label: "PROFILE" },
+  { id: "vision-mission", label: "VISION & MISSION" },
+  { id: "social-impact", label: "SOCIAL IMPACT" },
+  { id: "closing-cta", label: "PARTNERSHIP" },
 ] as const;
 
-/* ─── 01 · Hero ─── */
+/* 01 · Hero */
 export const hero = {
-  eyebrow: "CV SARINATURA HERBA",
+  eyebrow: "CV SARI NATURA HERBA",
   judul: "Your Best Partner for Herbal Needs",
   sub: "TOGETHER FOR A BETTER FUTURE",
 } as const;
 
-/* ─── 02 · Why Partner With Us ─── */
+/* 02 · Why Partner With Us */
 export const whyPartner = {
   eyebrow: "WHY PARTNER WITH US",
   judul: "Designed to meet the global supply of high-quality herbal products.",
-  teks: "Pengadaan barang dengan fokus pada kualitas, logistik yang fleksibel, dan solusi pengemasan yang disesuaikan untuk distributor global, pedagang grosir, dan merek ritel.",
+  teks: "Quality-focused sourcing, flexible logistics, and packaging solutions tailored for global distributors, wholesalers, and retail brands.",
   kolom: [
     {
       no: "01",
-      judul: "Standar Kualitas Internasional",
-      teks: "Produk-produk yang bersumber melalui jaringan produksi yang berfokus pada kualitas dengan praktik manajemen keamanan pangan yang ketat.",
+      judul: "International Quality Standards",
+      teks: "Products are sourced through quality-focused production networks with strict food safety management practices.",
     },
     {
       no: "02",
-      judul: "Keandalan",
-      teks: "Kami berkomitmen untuk menjaga konsistensi kualitas produk, koordinasi pasokan yang dapat diandalkan, dan pengiriman tepat waktu untuk mendukung keberlanjutan operasional klien kami.",
+      judul: "Reliability",
+      teks: "We are committed to consistent product quality, dependable supply coordination, and timely delivery to support our clients' operations.",
     },
     {
       no: "03",
-      judul: "Transparansi",
-      teks: "Kejujuran dan transparansi di setiap tahap bisnis adalah prinsip-prinsip yang selalu kami junjung tinggi. Kami berkomitmen untuk menjaga komunikasi yang jelas dengan semua mitra terkait spesifikasi produk, ketersediaan stok, harga, dan status pengiriman.",
+      judul: "Transparency",
+      teks: "Honesty and transparency guide every stage of our business. We maintain clear communication with partners about product specifications, stock availability, pricing, and shipping status.",
     },
   ],
 } as const;
 
-/* ─── 03 · Product Highlights ─── */
+/* 03 · Product Highlights */
 export const productHighlights = {
   eyebrow: "PRODUCT HIGHLIGHTS",
-  judul: "Indonesia's natural products prepare for global markets.",
-  teks: "Hygienically processed to preserve natural purity, authentic taste, and commercial consistency.",
+  judul: "Indonesia's natural products, prepared for global markets.",
+  teks: "Carefully processed to preserve natural purity, authentic taste, and commercial consistency.",
 } as const;
 
-/* ─── 04 · Supplying Indonesia's Natural Resources ─── */
+/* About hero */
 export const resources = {
-  eyebrow: "CV SARINATURA HERBA",
+  eyebrow: "CV SARI NATURA HERBA",
   judul: "Supplying Indonesia's Natural Resources to the Global Market",
-  teks: "Through strategic sourcing and a well-managed supply chain, we ensure a consistent supply of export-quality fresh ginger, utilizing flexible partnership models that directly connect Indonesian ginger farmers to international markets.",
+  teks: "Through strategic sourcing and a well-managed supply chain, we provide export-quality Indonesian ginger and connect local production with international markets.",
   cta: "DISCOVER OUR COMPANY",
   fotoKecil: "INDONESIAN NATURAL PRODUCTS",
   fotoJudul: "Local potential. Reliable global supply.",
 } as const;
 
-/* ─── 05 · Core Values ─── */
+/* 04 · Core Values */
 export const coreValues = {
   eyebrow: "OUR CORE VALUES",
   judul: "Principles We Uphold in Every Partnership",
-  teks: "Our values shape the way we source products, coordinate supply chains,communicate with partners, and build long-term business relationships.",
+  teks: "Our values shape how we source products, coordinate supply chains, communicate with partners, and build long-term business relationships.",
   kolom: [
     {
       no: "01",
       judul: "Quality",
-      teks: "Our commitment to superior quality and global export standards forms the core foundation of this business. Every product we export undergoes a rigorous selection process to ensure uniform sizing, optimal cleanliness, freedom from damage, and freshness that meets international market requirements.",
+      teks: "Our commitment to quality and global export standards is the foundation of our business. Every product is carefully selected for size consistency, cleanliness, condition, and freshness in line with international market requirements.",
     },
     {
       no: "02",
@@ -108,19 +108,19 @@ export const coreValues = {
     {
       no: "03",
       judul: "Transparency",
-      teks: "Honesty and transparency at every stage of business are principles we steadfastly uphold. We are committed to maintaining clear communication with all partners regarding product specifications, stock availability, pricing, and shipping status.",
+      teks: "Honesty and transparency guide every stage of our business. We keep partners informed about product specifications, stock availability, pricing, and shipping status.",
     },
   ],
 } as const;
 
-/* ─── 06 · Company Profile ─── */
+/* 05 · Company Profile */
 export const companyProfile = {
   eyebrow: "COMPANY PROFILE",
   judul: "A strategic gateway from Indonesia to global markets.",
   paragraf: [
-    "CV Sari Natura Herba is a sourcing and trading partner that brings high-quality, export-grade Indonesian fresh ginger to the global market.",
-    "We collaborate with selected farmers and suppliers to provide a consistent supply of fresh ginger that meets buyer specifications and is ready for export. From sourcing in production areas, sorting, and packaging to coordinating shipments, we manage every stage with a focus on quality, precision, and reliability.",
-    "By combining Indonesia's agricultural potential with rigorous quality control, CV Sari Natura Herba is committed to serving as a long-term supply partner for importers, distributors, wholesalers, manufacturers, and retail brands across international markets.",
+    "CV Sari Natura Herba is a sourcing and trading partner bringing export-grade Indonesian fresh ginger to the global market.",
+    "We work with selected farmers and suppliers to provide a consistent supply of fresh ginger that meets buyer specifications. From sourcing and sorting to packaging and shipment coordination, we manage each stage with a focus on quality, precision, and reliability.",
+    "By combining Indonesia's agricultural potential with quality control, CV Sari Natura Herba aims to serve as a long-term supply partner for importers, distributors, wholesalers, manufacturers, and retail brands across international markets.",
   ],
   stat: [
     {
@@ -129,7 +129,7 @@ export const companyProfile = {
     },
     {
       label: "MINIMUM ORDER",
-      nilai: "Starting from 15 tons ( container 20 Feet ) depending on product type and packaging requirement",
+      nilai: "Starting from 15 tons (20-foot container), depending on product type and packaging requirements",
     },
     {
       label: "LEAD TIME",
@@ -138,18 +138,17 @@ export const companyProfile = {
   ],
 } as const;
 
-/* ─── Vision & Mission (dark) ─── */
+/* 06 · Vision & Mission */
 export const visionMission = {
   visiEyebrow: "OUR VISION",
   visiJudul: "Our Path Toward Responsible Global Growth",
-  visiTeks: "We bring export-quality fresh Indonesian ginger to market through responsible partnerships, reliable sourcing, and a coordinated supply chain. Together with our farmer partners and global buyers, we foster long-term growth that creates value from the source to the destination market.",
-  // Ejaan "MISION" dipertahankan persis seperti mockup.
-  misiEyebrow: "OUR MISION",
+  visiTeks: "We bring export-quality Indonesian ginger to market through responsible partnerships, reliable sourcing, and a coordinated supply chain. Together with our farmer partners and global buyers, we aim for long-term growth that creates value from the source to the destination market.",
+  misiEyebrow: "OUR MISSION",
   misi: [
     {
       no: "01",
       judul: "Supplying export-quality fresh ginger",
-      teks: "Supplying fresh Indonesian ginger selected and prepared according to buyer specifications, with a focus on quality, supply consistency, product handling, and packaging requirements for the international market.",
+      teks: "Supplying fresh Indonesian ginger selected and prepared according to buyer specifications, with a focus on quality, supply consistency, product handling, and packaging requirements for international markets.",
     },
     {
       no: "02",
@@ -159,51 +158,51 @@ export const visionMission = {
     {
       no: "03",
       judul: "Creating partnerships for mutual growth",
-      teks: "Building mutually beneficial, long-term partnerships with farmers, suppliers, importers, distributors, and global business partners, while fostering added value for Indonesia's agricultural potential.",
+      teks: "Building mutually beneficial, long-term partnerships with farmers, suppliers, importers, distributors, and global business partners, while supporting the value of Indonesia's agricultural potential.",
     },
   ],
 } as const;
 
-/* ─── Social Impact & Sustainability ─── */
+/* 07 · Social Impact & Sustainability */
 export const socialImpact = {
   eyebrow: "SOCIAL IMPACT & SUSTAINABILITY",
   judul: "Building Responsible Supply Chains Together",
   paragraf: [
     "A responsible supply chain forms the foundation of our ginger export business.",
-    "We work closely with partner farmers to ensure good agricultural practices, fair pricing, and sustainable well-being. At the same time, we maintain transparency and open communication with international buyers through comprehensive documentation, product traceability, and adherence to global quality standards. Through this approach, we not only export high-quality ginger but also build a business ecosystem that delivers positive impacts for all stakeholders—farmers, buyers, the environment, and the surrounding communities.",
+    "We work closely with partner farmers and international buyers, with a focus on responsible sourcing, clear communication, product traceability, and relevant quality documentation. Our aim is to build long-term business relationships that create value for farmers, buyers, and surrounding communities.",
   ],
   fotoJudul: "Supporting a resilient network of local farmers.",
 } as const;
 
-/* ─── CTA gelap (penutup home) ─── */
+/* 08 · Closing CTA */
 export const ctaGelap = {
-  eyebrow: "LONG - TERM SUPPLY PARTNERSHIP",
+  eyebrow: "LONG-TERM SUPPLY PARTNERSHIP",
   judul: "Building reliable partnerships from Indonesia to the world.",
   cta: "DISCUSS A PARTNERSHIP",
 } as const;
 
-/* ─── CTA Bahasa Indonesia (penutup halaman Products) ─── */
-export const ctaId = {
-  eyebrow: "KEMITRAAN PASOKAN GLOBAL",
-  judul: "Sedang mencari mitra pemasok Indonesia yang andal?",
-  teks: "Hubungi tim kami untuk membahas spesifikasi produk, persyaratan pengemasan, dan volume pengiriman.",
-  cta: "HUBUNGI TIM PENJUALAN KAMI",
+/* Products CTA */
+export const ctaProducts = {
+  eyebrow: "GLOBAL SUPPLY PARTNERSHIPS",
+  judul: "Looking for a reliable Indonesian supply partner?",
+  teks: "Contact our team to discuss product specifications, packaging requirements, and shipment volumes.",
+  cta: "CONTACT OUR SALES TEAM",
 } as const;
 
-/* ─── Landing Products ─── */
+/* Products landing */
 export const produkLanding = {
   eyebrow: "OUR PRODUCTS",
-  judul: "PREMIUM ELEPHANT GINGER PRODUCTS FOR THE GLOBAL MARKET.",
-  teks: "Kami menyediakan jahe dan produk pertanian pilihan yang diproses secara cermat untuk memenuhi standar ekspor. Dengan sumber pasokan yang andal, spesifikasi yang konsisten, serta opsi pengemasan yang fleksibel, kami siap menjadi mitra pasokan jangka panjang bagi importir di berbagai negara.",
-  cta: "JELAJAHI PRODUK KAMI",
-  ctaKedua: "HUBUNGI TIM KAMI",
+  judul: "PREMIUM INDONESIAN GINGER PRODUCTS FOR THE GLOBAL MARKET.",
+  teks: "We supply carefully selected Indonesian ginger products for export markets. With consistent specifications and flexible packaging options, we aim to be a long-term supply partner for importers.",
+  cta: "EXPLORE OUR PRODUCTS",
+  ctaKedua: "CONTACT OUR TEAM",
 } as const;
 
-/* ─── Halaman Kontak ─── */
+/* Contact page */
 export const kontak = {
   heroEyebrow: "CONTACT OUR SALES TEAM",
   heroJudul: "Let's discuss your global supply requirements.",
-  heroTeks: "Submit your product, packaging, volume, and destination requirements, Our sales team will review your inquiry and provide an official response within one business day.",
+  heroTeks: "Submit your product, packaging, volume, and destination requirements. Our sales team will review your inquiry and respond within one business day.",
   infoEyebrow: "DIRECT CONTACT INFORMATION",
   infoJudul: "Connect directly with our business team.",
   alamatLabel: "OFFICIAL OFFICE ADDRESS",
@@ -213,86 +212,83 @@ export const kontak = {
   jamLabel: "BUSINESS HOURS",
 } as const;
 
-/* ─── Formulir kutipan (B2B) ─── */
+/* B2B quotation form */
 export const formulir = {
   eyebrow: "OFFICIAL B2B INQUIRY FORM",
   judul: "International Quotation Request",
-  teks: "Please complete the form below. Our sales team will review your requirements and provide an official response within one business day.",
+  teks: "Complete the form below with your requirements. The inquiry form is currently a preview and does not send messages yet.",
   persetujuan:
     "I agree to be contacted regarding this inquiry and understand that the submitted information will be used for business communication and quotation purposes.",
-  kirim: "SUBMIT INQIURY",
+  kirim: "VALIDATE FORM",
 } as const;
 
 export type Produk = {
   slug: string;
-  /** Judul H1 halaman detail */
   h1: string;
-  /** Subjudul emas di bawah H1 */
   subjudul: string;
-  /** Judul overlay kartu di home/produk */
   kartu: string;
   intro: string;
   gambar: string;
   alt: string;
-  /** Foto di sisi kiri (jahe gajah) atau kanan (jahe kering) */
   fotoKiri: boolean;
   deskripsi: string[];
   spesifikasi: { label: string; nilai: string }[];
   ringkas: string;
 };
 
+/** Only products and specifications already present in the repository are listed. */
 export const produk: Produk[] = [
   {
     slug: "jahe-gajah",
-    h1: "Jahe Gajah",
-    subjudul: "Elephant ginger",
-    kartu: "Jahe segar",
+    h1: "Fresh Elephant Ginger",
+    subjudul: "Elephant Ginger",
+    kartu: "Fresh Elephant Ginger",
     intro:
-      "Jahe gajah segar pilihan asal Indonesia dengan ukuran besar, serat halus, dan aroma tajam yang khas. Cocok untuk kebutuhan industri makanan, minuman, dan farmasi.",
-    gambar: "/img/jahe-gajah.jpg",
-    alt: "Tumpukan rimpang jahe gajah segar dengan tanah menempel",
+      "Selected Indonesian elephant ginger with large rhizomes, fine fibers, and a distinctive aroma. Suitable for food, beverage, and pharmaceutical industry requirements.",
+    gambar: "/img/ginger-fresh-customer.jpg",
+    alt: "Fresh Indonesian elephant ginger rhizomes",
     fotoKiri: true,
     deskripsi: [
-      "Jahe gajah segar kami berasal dari sentra produksi jahe terbaik di Indonesia dan dipilih secara ketat untuk memenuhi standar kualitas ekspor. Jahe gajah dikenal dengan ukuran rimpang yang besar, daging tebal, serat relatif halus, serta aroma dan rasa pedas yang khas, sehingga menjadi pilihan utama untuk berbagai kebutuhan industri makanan, minuman, herbal, dan farmasi.",
-      "Setiap batch jahe gajah segar kami melalui proses penanganan pascapanen yang terkontrol, mulai dari pemilihan bahan, pencucian, pengeringan permukaan, hingga sortasi akhir. Hal ini dilakukan untuk memastikan kebersihan, keseragaman ukuran, dan kesegaran jahe tetap terjaga selama proses pengemasan dan pengiriman ke berbagai negara. Dengan sumber pasokan yang andal dan kontrol kualitas di setiap tahap, kami mampu menyediakan jahe gajah segar dengan spesifikasi yang konsisten sesuai permintaan buyer internasional.",
-      "Jahe gajah segar ini cocok digunakan sebagai bahan baku industri makanan dan minuman, produk herbal dan suplemen, bahan baku farmasi, serta kebutuhan pasar retail dan grosir di luar negeri. Kami menawarkan fleksibilitas dalam hal ukuran sortasi, grade, dan solusi pengemasan agar dapat disesuaikan dengan kebutuhan logistik dan preferensi importir. Melalui komitmen terhadap kualitas, ketepatan waktu, dan keandalan pasokan, jahe gajah segar kami siap menjadi mitra pasokan jangka panjang Anda di pasar global.",
+      "Our fresh elephant ginger is sourced from Indonesian production areas and carefully selected for export quality. It is known for its large rhizomes, thick flesh, relatively fine fibers, and distinctive aroma and pungency, making it suitable for food, beverage, herbal, and pharmaceutical applications.",
+      "Each batch is handled through controlled post-harvest steps, including selection, washing, surface drying, and final sorting. These steps help maintain cleanliness, size consistency, and freshness during packing and shipment. We aim to provide fresh elephant ginger with consistent specifications according to buyer requirements.",
+      "Fresh elephant ginger can be used as an ingredient for food and beverages, herbal products and supplements, pharmaceutical raw materials, and retail or wholesale markets. Sorting sizes, grades, and packaging may be adjusted to buyer requirements. Our focus is on quality, timely delivery, and dependable supply.",
     ],
     spesifikasi: [
-      { label: "Jenis Produk", nilai: "Jahe Gajah." },
-      { label: "Bentuk", nilai: "Rimpang." },
-      { label: "Warna", nilai: "Putih Kekuningan." },
-      { label: "Rasa", nilai: "Pedas yang paling lembut dan aroma yang kurang tajam." },
-      { label: "Kadar Air", nilai: "Sesuai spesifikasi pembeli." },
-      { label: "Pengemasan", nilai: "Sesuai spesifikasi pembeli." },
+      { label: "Product Type", nilai: "Elephant ginger" },
+      { label: "Form", nilai: "Rhizome" },
+      { label: "Color", nilai: "Yellowish white" },
+      { label: "Taste", nilai: "Mild pungency and a less intense aroma" },
+      { label: "Moisture Content", nilai: "According to buyer specifications" },
+      { label: "Packaging", nilai: "According to buyer specifications" },
     ],
     ringkas:
-      "Jahe gajah segar pilihan asal Indonesia — ukuran besar, serat halus, aroma tajam.",
+      "Selected Indonesian fresh elephant ginger with large rhizomes, fine fibers, and a distinctive aroma.",
   },
   {
     slug: "jahe-kering-slice",
-    h1: "Jahe Kering Slice",
+    h1: "Dried Ginger Slices",
     subjudul: "Ginger Slices",
-    kartu: "Jahe Slice Kering",
+    kartu: "Dried Ginger Slices",
     intro:
-      "Irisan jahe kering berkualitas tinggi dari Indonesia dengan aroma alami dan cita rasa pedas yang hangat, cocok untuk teh herbal, campuran rempah, bahan makanan, dan produk herbal.",
-    gambar: "/img/jahe-kering.jpg",
-    alt: "Irisan jahe kering berwarna kuning keemasan di atas permukaan kayu",
+      "High-quality dried ginger slices from Indonesia, with a natural aroma and warm pungency. Suitable for herbal tea, spice blends, food ingredients, and herbal products.",
+    gambar: "/img/ginger-slices-customer.jpg",
+    alt: "Golden dried Indonesian ginger slices",
     fotoKiri: false,
     deskripsi: [
-      "Jahe Slice Kering adalah jahe kering yang diiris dari akar jahe pilihan Indonesia dan diproses untuk mempertahankan aroma alaminya, rasa pedas yang hangat, dan tekstur berserat yang khas.",
-      "Produk ini umumnya digunakan untuk minuman herbal, campuran teh, campuran rempah-rempah, bahan makanan, ramuan tradisional, dan pengolahan lebih lanjut oleh produsen makanan.",
-      "Dengan proses pengeringan, penyortiran, dan pengemasan yang tepat, irisan jahe kering kami siap untuk dipasok secara grosir dan diekspor kepada pembeli internasional.",
+      "Dried Ginger Slices are made from selected Indonesian ginger roots and processed to retain their natural aroma, warm pungency, and characteristic fibrous texture.",
+      "They are commonly used in herbal drinks, tea blends, spice blends, food ingredients, traditional preparations, and further processing by food manufacturers.",
+      "With suitable drying, sorting, and packaging processes, our dried ginger slices are prepared for wholesale supply and export to international buyers.",
     ],
     spesifikasi: [
-      { label: "Jenis Produk", nilai: "Irisan Jahe Kering." },
-      { label: "Bentuk", nilai: "Rimpang Kering Yang Diiris." },
-      { label: "Warna", nilai: "Kuning Muda Hingga Cokelat Pucat." },
-      { label: "Aroma", nilai: "Aroma Jahe Alami" },
-      { label: "Kadar Air", nilai: "Sesuai spesifikasi pembeli." },
-      { label: "Pengemasan", nilai: "Sesuai spesifikasi pembeli." },
+      { label: "Product Type", nilai: "Dried ginger slices" },
+      { label: "Form", nilai: "Sliced dried rhizome" },
+      { label: "Color", nilai: "Light yellow to pale brown" },
+      { label: "Aroma", nilai: "Natural ginger aroma" },
+      { label: "Moisture Content", nilai: "According to buyer specifications" },
+      { label: "Packaging", nilai: "According to buyer specifications" },
     ],
     ringkas:
-      "Irisan jahe kering dari Indonesia — aroma alami, siap ekspor grosir.",
+      "Indonesian dried ginger slices with a natural aroma, prepared for wholesale export supply.",
   },
 ];
 

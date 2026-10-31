@@ -31,12 +31,12 @@ function validate(f: FormData): FieldErrors {
   const volume = String(f.get("volume") ?? "").trim();
   const pesan = String(f.get("pesan") ?? "").trim();
 
-  if (nama.length < 2) e.nama = "Mohon isi nama lengkap Anda.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) e.email = "Format email tidak valid.";
-  if (negara.length < 2) e.negara = "Mohon isi negara tujuan.";
-  if (!produkVal) e.produk = "Pilih salah satu produk.";
-  if (!volume) e.volume = "Isi perkiraan volume dalam metrik ton.";
-  if (pesan.length < 10) e.pesan = "Ceritakan kebutuhan Anda minimal 10 karakter.";
+  if (nama.length < 2) e.nama = "Please enter your full name.";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) e.email = "Enter a valid email address.";
+  if (negara.length < 2) e.negara = "Please enter the destination country.";
+  if (!produkVal) e.produk = "Choose a product.";
+  if (!volume) e.volume = "Enter the estimated volume in metric tons.";
+  if (pesan.length < 10) e.pesan = "Please provide at least 10 characters about your requirements.";
   return e;
 }
 
@@ -48,9 +48,9 @@ function validate(f: FormData): FieldErrors {
  */
 export function QuoteForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "preview">("idle");
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -62,11 +62,8 @@ export function QuoteForm() {
       return;
     }
 
-    setStatus("loading");
-    // Siap dikirim ke server action/email endpoint — saat ini simulasi sukses.
-    await new Promise((r) => setTimeout(r, 600));
-    setStatus("success");
-    form.reset();
+    // Local validation only; there is no inquiry backend connected yet.
+    setStatus("preview");
   }
 
   return (
@@ -75,16 +72,15 @@ export function QuoteForm() {
       <h2 className="mt-4 text-h2 font-bold text-linen">{formulir.judul}</h2>
       <p className="mt-4 max-w-lg text-body-sm text-linen/75">{formulir.teks}</p>
 
-      {status === "success" ? (
+      {status === "preview" ? (
         <div
           role="status"
           aria-live="polite"
           className="mt-8 rounded-xl border border-tan/50 bg-white/5 p-7"
         >
-          <h3 className="text-h3 font-bold text-tan">Terima kasih — permintaan Anda terkirim.</h3>
+          <h3 className="text-h3 font-bold text-tan">Form preview complete — no inquiry was sent.</h3>
           <p className="mt-3 text-body-sm text-linen/80">
-            Tim kami akan membalas ke email Anda pada {site.jamHari}, {site.jamJam}. Untuk
-            kebutuhan mendesak, hubungi{" "}
+            This website does not yet have an inquiry service connected. To contact the team, use{" "}
             <a
               href={`https://wa.me/${site.teleponWa}`}
               className="font-semibold text-tan underline"
@@ -98,7 +94,7 @@ export function QuoteForm() {
             onClick={() => setStatus("idle")}
             className="mt-5 text-caption font-bold tracking-[0.12em] text-linen uppercase underline underline-offset-4 hover:text-tan"
           >
-            Kirim permintaan lain
+            Return to the form
           </button>
         </div>
       ) : (
@@ -227,7 +223,7 @@ export function QuoteForm() {
                   className={INPUT + " appearance-none pr-11"}
                 >
                   <option value="" disabled className="bg-espresso text-linen">
-                    Pilih produk…
+                    Select a product…
                   </option>
                   {produk.map((p) => (
                     <option key={p.slug} value={p.slug} className="bg-espresso text-linen">
@@ -235,7 +231,7 @@ export function QuoteForm() {
                     </option>
                   ))}
                   <option value="lainnya" className="bg-espresso text-linen">
-                    Lainnya / Other
+                    Other
                   </option>
                 </select>
                 <svg
@@ -296,7 +292,7 @@ export function QuoteForm() {
               aria-invalid={errors.pesan ? "true" : undefined}
               aria-describedby={errors.pesan ? "pesan-error" : undefined}
               className={INPUT + " resize-y"}
-              placeholder="Spesifikasi produk, kemasan, pelabuhan tujuan, incoterms…"
+              placeholder="Product specifications, packaging, destination port, Incoterms…"
             />
             {errors.pesan && (
               <p id="pesan-error" className={ERR}>
@@ -319,10 +315,9 @@ export function QuoteForm() {
 
           <button
             type="submit"
-            disabled={status === "loading"}
             className="btn-pill w-full disabled:opacity-60 sm:w-auto"
           >
-            {status === "loading" ? "Mengirim…" : formulir.kirim}
+            {formulir.kirim}
           </button>
         </form>
       )}

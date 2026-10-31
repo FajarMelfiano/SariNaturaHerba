@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { AboutAdditionalSections } from "@/components/AboutSections";
 import { CompanyProfile } from "@/components/CompanyProfile";
 import { resources } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About — Supplying Indonesia's Natural Resources",
   description:
-    "Menghubungkan sumber daya alam Indonesia dengan pasar global lewat rantai pasok yang tertata, transparan, dan siap skala internasional.",
+    "Connecting Indonesian natural resources with global markets through a coordinated and transparent supply chain.",
 };
 
 /**
@@ -36,12 +37,12 @@ export default function AboutPage() {
             className="relative overflow-hidden rounded-xl outline outline-1 outline-black/10"
           >
             <Image
-              src="/img/petani.jpg"
-              alt="Petani Indonesia memegang hasil panen rimpang di kebun"
-              width={960}
-              height={720}
+              src="/img/farm-about-customer.jpg"
+              alt="Local farmers tending ginger crops in Indonesia"
+              width={1024}
+              height={1536}
               priority
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/5] w-full object-cover"
             />
             <div
               aria-hidden="true"
@@ -61,6 +62,7 @@ export default function AboutPage() {
 
       {/* Target scroll tombol di atas — satu sumber kode dengan home */}
       <CompanyProfile />
+      <AboutAdditionalSections />
     </>
   );
 }
