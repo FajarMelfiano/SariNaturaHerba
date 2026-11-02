@@ -36,7 +36,7 @@ export function SlideRail() {
     const akhir = document.getElementById(bagianHome[bagianHome.length - 1].id);
     const cekBatas = () => {
       if (!akhir) return;
-      setTerlihat(akhir.getBoundingClientRect().bottom > window.innerHeight * 0.5);
+      setTerlihat(akhir.getBoundingClientRect().top > window.innerHeight * 0.5);
     };
     cekBatas();
     window.addEventListener("scroll", cekBatas, { passive: true });
