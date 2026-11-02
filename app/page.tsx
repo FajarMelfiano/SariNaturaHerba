@@ -45,9 +45,18 @@ export default function HomePage() {
       <SlideRail />
 
       {/* 01 · Hero — panel kiri krem + foto kanan (split sesuai mockup) */}
-      <section id="home" aria-labelledby="home-judul" className="border-b border-line">
-        <div className="grid md:min-h-[calc(100svh-5rem)] md:grid-cols-[minmax(360px,42%)_1fr]">
-          <div className="hero-gradient flex flex-col justify-center px-7 py-16 md:px-12 md:py-20">
+      <section id="home" aria-labelledby="home-judul" className="relative isolate overflow-hidden border-b border-line">
+        <Image
+          src="/img/hero-background-customer.jpg"
+          alt="Fresh ginger rhizomes and dried ginger slices against a cream backdrop"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[70%_center]"
+        />
+        <div aria-hidden="true" className="hero-background-scrim absolute inset-0" />
+        <div className="relative z-10 grid md:min-h-[calc(100svh-5rem)] md:grid-cols-[minmax(360px,42%)_1fr]">
+          <div className="flex flex-col justify-center px-7 py-16 md:px-12 md:py-20">
             <p data-reveal className="eyebrow eyebrow-dash">
               {hero.eyebrow}
             </p>
@@ -80,20 +89,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[300px] overflow-hidden md:min-h-0">
-            <Image
-              src="/img/hero.jpg"
-              alt="Fresh ginger rhizomes and dried ginger slices"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 58vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-r from-[#e9dcc5]/65 via-[#e9dcc5]/15 to-transparent"
-            />
-          </div>
+          <div aria-hidden="true" className="min-h-[300px] md:min-h-0" />
         </div>
       </section>
 
