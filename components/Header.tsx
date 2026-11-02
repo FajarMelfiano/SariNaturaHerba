@@ -100,12 +100,10 @@ export function Header() {
       <div
         id="menu-overlay"
         hidden={!open}
-        className="fixed inset-0 z-50 flex flex-col overflow-y-auto text-ink"
+        className="menu-overlay fixed inset-0 z-50 flex flex-col overflow-y-auto text-ink"
         style={{
           backgroundImage:
             "linear-gradient(100deg, rgba(251,247,236,.96) 0%, rgba(251,247,236,.9) 54%, rgba(251,247,236,.68) 100%), url('/img/menu-background.jpg')",
-          backgroundPosition: "center right",
-          backgroundSize: "cover",
         }}
         role="dialog"
         aria-modal="true"

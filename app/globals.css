@@ -326,3 +326,19 @@ html.motion-ready [data-reveal].is-in {
     transition: none;
   }
 }
+.menu-overlay {
+  background-position: center right;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .menu-overlay {
+    background-position: center top, right top;
+  }
+
+  @supports (height: 100lvh) {
+    .menu-overlay {
+      background-size: 100% 100%, max(100vw, 177.7778lvh) auto;
+    }
+  }
+}
