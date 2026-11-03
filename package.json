@@ -2,7 +2,7 @@
   "name": "sari-natura-herba",
   "version": "1.0.0",
   "private": true,
-  "description": "Website resmi CV Sari Natura Herba — eksporir jahe dan produk herbal Indonesia",
+  "description": "Website resmi PT SARINATURA HERBA — eksporir jahe dan produk herbal Indonesia",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validasi struktur situs CV Sari Natura Herba — bisa dijalankan ulang kapan saja.
+"""Validasi struktur situs PT SARINATURA HERBA — bisa dijalankan ulang kapan saja.
 
 Cek:
   1. File wajib (halaman, komponen, konten, aset) ada.

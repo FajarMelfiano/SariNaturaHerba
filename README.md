@@ -1,6 +1,6 @@
-# CV Sari Natura Herba — Website
+# PT SARINATURA HERBA — Website
 
-Company profile and export catalog for CV Sari Natura Herba, built with **Next.js 15 (App Router), TypeScript, and Tailwind CSS v4**.
+Company profile and export catalog for PT SARINATURA HERBA, built with **Next.js 15 (App Router), TypeScript, and Tailwind CSS v4**.
 
 ## Run locally
 

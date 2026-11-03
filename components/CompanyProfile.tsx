@@ -1,7 +1,7 @@
 import { companyProfile } from "@/content/site";
 
 /**
- * Section "CV SARINATURA HERBA / A strategic gateway…" + tiga stat kartu.
+ * Section "PT SARINATURA HERBA / A strategic gateway…" + tiga stat kartu.
  * Dipakai di dua tempat: home (bagian 05) dan halaman About (scroll target
  * tombol "DISCOVER OUR COMPANY") — satu sumber kode, tanpa duplikasi.
  */

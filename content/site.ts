@@ -1,11 +1,11 @@
 /**
- * CV Sari Natura Herba site content.
+ * PT SARINATURA HERBA site content.
  * Keep customer-provided company and product facts unchanged; UI copy is English.
  */
 
 export const site = {
-  nama: "CV Sari Natura Herba",
-  namaFooter: "CV Sari Natura Herba",
+  nama: "PT SARINATURA HERBA",
+  namaFooter: "PT SARINATURA HERBA",
   taglineFooter: "Indonesian Ginger & Herbal Products Exporter",
   tagline: "PURITY WITH VALUE",
   deskripsi:
@@ -43,7 +43,7 @@ export const bagianHome = [
 
 /* 01 · Hero */
 export const hero = {
-  eyebrow: "CV SARI NATURA HERBA",
+  eyebrow: "PT SARINATURA HERBA",
   judul: "Your Best Partner for Herbal Needs",
   sub: "TOGETHER FOR A BETTER FUTURE",
 } as const;
@@ -81,7 +81,7 @@ export const productHighlights = {
 
 /* About hero */
 export const resources = {
-  eyebrow: "CV SARI NATURA HERBA",
+  eyebrow: "PT SARINATURA HERBA",
   judul: "Supplying Indonesia's Natural Resources to the Global Market",
   teks: "Through strategic sourcing and a well-managed supply chain, we provide export-quality Indonesian ginger and connect local production with international markets.",
   cta: "DISCOVER OUR COMPANY",
@@ -118,9 +118,9 @@ export const companyProfile = {
   eyebrow: "COMPANY PROFILE",
   judul: "A strategic gateway from Indonesia to global markets.",
   paragraf: [
-    "CV Sari Natura Herba is a sourcing and trading partner bringing export-grade Indonesian fresh ginger to the global market.",
+    "PT SARINATURA HERBA is a sourcing and trading partner bringing export-grade Indonesian fresh ginger to the global market.",
     "We work with selected farmers and suppliers to provide a consistent supply of fresh ginger that meets buyer specifications. From sourcing and sorting to packaging and shipment coordination, we manage each stage with a focus on quality, precision, and reliability.",
-    "By combining Indonesia's agricultural potential with quality control, CV Sari Natura Herba aims to serve as a long-term supply partner for importers, distributors, wholesalers, manufacturers, and retail brands across international markets.",
+    "By combining Indonesia's agricultural potential with quality control, PT SARINATURA HERBA aims to serve as a long-term supply partner for importers, distributors, wholesalers, manufacturers, and retail brands across international markets.",
   ],
   stat: [
     {
